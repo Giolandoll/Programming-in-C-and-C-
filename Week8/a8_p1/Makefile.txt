@@ -1,0 +1,22 @@
+all: main
+
+main: queue.o testqueue.o
+	gcc -Wall -o main queue.o testqueue.o 
+	
+queue.o: queue.h queue.c
+	gcc -Wall -c queue.c
+
+testqueue.o: queue.h testqueue.c
+	gcc -Wall -c testqueue.c
+
+compileonly: queue.o testqueue.o
+
+deleteofiles:
+	del /q *.o
+	
+deleteexec:
+	del /q main.exe
+
+deleteall: deleteexec deleteofiles
+
+

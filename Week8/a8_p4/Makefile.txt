@@ -1,0 +1,23 @@
+all: main
+
+main: stack.o convertingstack.o 
+	gcc -Wall -o main stack.o convertingstack.o 
+	
+stack.o: stack.h stack.c
+	gcc -Wall -c stack.c
+
+convertingstack.o: stack.h convertingstack.c
+	gcc -Wall -c convertingstack.c
+
+compileonly: stack.o convertingstack.o
+
+deleteofiles:
+	del /q *.o
+	
+deleteexec:
+	del /q main.exe
+
+deleteall: deleteexec deleteofiles
+
+
+
