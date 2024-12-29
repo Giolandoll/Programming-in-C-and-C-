@@ -1,0 +1,22 @@
+/*
+CH-230-A
+a10 p1
+Giovanni Falconer
+gfalconer@jacobs-university.de
+*/
+
+
+1)When you comment out "using namespace std", several errors are generated due 
+to elements in the code that require a prefix to avoid ambiguous instances. 
+These elements include cin and cout and string which all exists in the standard
+library. Using the line "using namespace std" helps to avoid this problem. 
+
+To fix this without using that line, adding std:: before each instance of the 
+elements cin, cout and string will declare that those elements are apart of the
+standard library. 
+
+
+2)By removing Critter:: prefix in one of the methods, a undefined identifier error
+is generated. This is because the definition of the method is changed making it no
+longger a defined member of the Critter class. Hence it can no longer access the class
+members of Critter.
